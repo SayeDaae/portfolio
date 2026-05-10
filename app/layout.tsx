@@ -24,7 +24,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: 'Lunara Daae | Web Developer & Instructional Designer',
+  title: 'Jesu Santos | Web Developer & Instructional Designer',
   description: 'Web Developer & Instructional Designer based in the Philippines. I build web experiences and learning platforms that are fast, functional, and worth remembering.',
   generator: 'v0.app',
   icons: {
