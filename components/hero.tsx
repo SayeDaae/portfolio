@@ -20,7 +20,7 @@ export function Hero() {
 
         {/* Name */}
         <h1 className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 tracking-tight text-balance">
-          Mark Joseph
+          Joseph Santos
         </h1>
 
         {/* Subtitle */}

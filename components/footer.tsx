@@ -5,7 +5,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
           {/* Brand */}
           <div className="flex flex-col gap-2">
-            <p className="font-[family-name:var(--font-syne)] text-lg font-bold text-cyan">MJ</p>
+            <p className="font-[family-name:var(--font-syne)] text-lg font-bold text-cyan">JESU</p>
             <p className="text-sm text-muted-foreground max-w-xs">
               Web Developer & Instructional Designer based in the Philippines.
               Open to remote work worldwide.

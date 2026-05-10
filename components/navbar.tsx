@@ -34,7 +34,7 @@ export function Navbar() {
             href="/"
             className="font-[family-name:var(--font-syne)] text-2xl font-bold text-cyan tracking-tight hover:opacity-80 transition-opacity"
           >
-            MJ
+            JESU
           </Link>
 
           {/* Desktop Navigation */}
