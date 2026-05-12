@@ -1,3 +1,7 @@
+"use client"
+
+import { useReveal } from "@/hooks/useReveal"
+
 const projects = [
   {
     name: "Dottica.art",
@@ -14,9 +18,14 @@ const projects = [
 ]
 
 export function Projects() {
+  const { ref, revealed } = useReveal()
+
   return (
     <section id="work" className="py-24 px-6">
-      <div className="mx-auto max-w-6xl">
+      <div
+        ref={ref}
+        className={`reveal ${revealed ? "revealed" : ""} mx-auto max-w-6xl`}
+      >
         <h2 className="font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 text-center">
           Featured Work
         </h2>
@@ -30,7 +39,6 @@ export function Projects() {
               key={project.name}
               className="group relative bg-card rounded-2xl border border-border p-8 hover:border-cyan/50 transition-all duration-300"
             >
-              {/* Project Header */}
               <div className="mb-6">
                 <h3 className="font-[family-name:var(--font-syne)] text-2xl font-bold text-foreground mb-3 group-hover:text-cyan transition-colors">
                   {project.name}
@@ -40,7 +48,6 @@ export function Projects() {
                 </p>
               </div>
 
-              {/* Stack Badges */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {project.stack.map((tech) => (
                   <span
@@ -52,7 +59,6 @@ export function Projects() {
                 ))}
               </div>
 
-              {/* Action Buttons */}
               <div className="flex gap-4">
                 <a
                   href={project.liveUrl}

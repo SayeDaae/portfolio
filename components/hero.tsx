@@ -1,8 +1,13 @@
+"use client"
+
 import Link from "next/link"
+import { useReveal } from "@/hooks/useReveal"
 
 const techStack = ["Frontend", "Backend", "UI/UX", "Instructional Design", "E-Learning"]
 
 export function Hero() {
+  const { ref, revealed } = useReveal()
+
   return (
     <section className="relative min-h-screen flex items-center justify-center">
       {/* Background Gradients */}
@@ -11,7 +16,10 @@ export function Hero() {
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan/15 rounded-full blur-[150px] -translate-x-1/3 translate-y-1/3" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 py-24 text-center">
+      <div
+        ref={ref}
+        className={`reveal ${revealed ? "revealed" : ""} relative z-10 mx-auto max-w-4xl px-6 py-24 text-center`}
+      >
         {/* Availability Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan/30 bg-cyan/5 mb-8">
           <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
