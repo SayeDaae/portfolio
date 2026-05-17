@@ -28,8 +28,6 @@ export function About() {
                     e.currentTarget.style.display = "none"
                   }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-sm">
-                </div>
               </div>
             </div>
           </div>
@@ -40,28 +38,29 @@ export function About() {
             <blockquote className="border-l-2 border-cyan pl-4">
               <p className="font-[family-name:var(--font-syne)] text-xl md:text-2xl font-bold text-foreground leading-snug">
                 I build for the web.{" "}
-                <span className="text-cyan">I design for people.</span>
+                <span className="text-cyan">I ship things that work.</span>
               </p>
             </blockquote>
 
             <p className="text-foreground leading-relaxed">
-              I&apos;m a Math and CS grad who landed at the intersection of{" "}
-              <span className="text-cyan font-medium">web development</span> and{" "}
-              <span className="text-pink font-medium">instructional design</span> — not by accident, but because the overlap is where the interesting work lives. Understanding how people learn makes me a better UI designer. Knowing how to build makes my designs actually ship.
+              I&apos;m a Math and CS grad who builds and deploys{" "}
+              <span className="text-cyan font-medium">production web applications</span> — from architecture to deployment. I work across the full stack using{" "}
+              <span className="text-cyan font-medium">React, JavaScript, and REST APIs</span>, with real experience on Linux VPS infrastructure, database integration, and end-to-end deployment workflows.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
-              I care about the details that most people skip — the ones that make something feel considered rather than just functional. Based in the Philippines, working with clients remotely across the globe.
+              I have a secondary edge in{" "}
+              <span className="text-pink font-medium">instructional design</span> — which means I think about how people actually use what I build, not just whether it runs. Based in the Philippines, working with clients remotely.
             </p>
 
             {/* Quick facts */}
             <div className="grid grid-cols-2 gap-4 pt-2">
               <div className="p-4 rounded-lg border border-border bg-card/50">
-                <p className="text-2xl font-bold font-[family-name:var(--font-syne)] text-cyan">2+</p>
+                <p className="text-2xl font-bold font-[family-name:var(--font-syne)] text-cyan">3+</p>
                 <p className="text-xs text-muted-foreground mt-1">Years building for the web</p>
               </div>
               <div className="p-4 rounded-lg border border-border bg-card/50">
-                <p className="text-2xl font-bold font-[family-name:var(--font-syne)] text-pink">3+</p>
+                <p className="text-2xl font-bold font-[family-name:var(--font-syne)] text-pink">4</p>
                 <p className="text-xs text-muted-foreground mt-1">Projects shipped</p>
               </div>
               <div className="p-4 rounded-lg border border-border bg-card/50">

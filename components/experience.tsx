@@ -1,115 +1,166 @@
-const experiences = [
-  {
-    title: "Instructional Designer",
-    company: "The Allicock Group",
-    period: "2026 - Present",
-  },
-  {
-    title: "Freelance Full Stack Web Developer",
-    company: "Self-employed",
-    period: "2025 - Present",
-  },
-  {
-    title: "Freelance Video Editor",
-    company: "Self-employed",
-    period: "2024 - 2025",
-  },
-  {
-    title: "Logistics Committee Head",
-    company: "Mathematics Society, BulSU",
-    period: "2024 - 2025",
-  },
-  {
-    title: "Multimedia Committee Head Apprentice",
-    company: "Mathematics Society, BulSU",
-    period: "2022 - 2023",
-  },
-  {
-    title: "Secretary / President",
-    company: "BulSU CSBand",
-    period: "2024 - 2025",
-  },
-]
-
-const education = [
-  {
-    title: "BS Mathematics & Computer Science",
-    company: "Bulacan State University",
-    period: "2022 - 2026",
-    note: "Class Mayor · Dean's Lister · DOST Scholar · Civil Service Passer",
-  },
-  {
-    title: "Laboratory High School",
-    company: "Bulacan State University",
-    period: "2016 - 2022",
-    note: "With Honours",
-  },
-]
-
+import { PixelFaceCard } from "@/components/PixelFace"
 export function Experience() {
   return (
-    <section id="experience" className="py-24 px-6">
+    <section id="experience" className="py-24 px-6" text-align="justify">
       <div className="mx-auto max-w-6xl">
+
+        {/* Header */}
         <h2 className="font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 text-center">
           Experience & Education
         </h2>
-        <p className="text-muted-foreground text-lg text-center mb-16 max-w-2xl mx-auto">
+        <p className="text-muted-foreground text-lg text-center mb-6 max-w-2xl mx-auto">
           My professional journey and academic background.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Experience Column */}
-          <div>
-            <h3 className="font-[family-name:var(--font-syne)] text-sm font-bold tracking-widest uppercase text-cyan mb-6">
-              Experience
-            </h3>
-            <div className="relative">
-              <div className="absolute left-2 top-0 bottom-0 w-px bg-cyan/20" />
-              <div className="flex flex-col gap-4">
-                {experiences.map((item) => (
-                  <div key={item.title} className="relative pl-8">
-                    <div className="absolute left-0 top-3 w-4 h-4 rounded-full border-2 border-cyan bg-background" />
-                    <div className="p-4 rounded-lg border border-border bg-card/50 hover:border-cyan/30 transition-colors duration-200">
-                      <div className="flex items-start justify-between gap-4 mb-1">
-                        <h4 className="font-[family-name:var(--font-syne)] text-sm font-bold text-foreground">
-                          {item.title}
-                        </h4>
-                        <span className="text-xs text-muted-foreground whitespace-nowrap">{item.period}</span>
-                      </div>
-                      <p className="text-xs text-cyan">{item.company}</p>
-                    </div>
-                  </div>
+        {/* Legend */}
+        <div className="flex items-center justify-center gap-6 mb-16">
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-cyan" />
+            <span className="text-xs text-muted-foreground">Experience</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-pink" />
+            <span className="text-xs text-muted-foreground">Education</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-yellow" />
+            <span className="text-xs text-muted-foreground">Achievement</span>
+          </div>
+        </div>
+
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 auto-rows-auto">
+
+          {/* HERO CARD — Lead Dev */}
+          <div className="md:col-span-4 p-6 rounded-2xl border border-cyan/30 bg-card/50 hover:border-cyan/60 transition-colors duration-200 flex flex-col justify-between min-h-[200px]">
+            <div>
+              <h3 className="font-[family-name:var(--font-syne)] text-2xl font-bold text-foreground mb-1">
+                Lead Developer & Project Coordinator
+              </h3>
+              <p className="text-cyan text-sm mb-3">Arcana Learning Platform</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Building a full-stack LMS with React/Vite and Frappe as headless backend. Handling API integration, intern onboarding, architecture decisions, and deployment on a Linux VPS.
+              </p>
+            </div>
+            <div className="flex items-center justify-between mt-6">
+              <div className="flex flex-wrap gap-2">
+                {["React", "Vite", "Frappe", "Linux VPS", "REST API"].map((tag) => (
+                  <span key={tag} className="text-xs px-2 py-1 rounded-full bg-cyan/10 text-cyan border border-cyan/20">
+                    {tag}
+                  </span>
                 ))}
               </div>
+              <span className="text-xs text-muted-foreground whitespace-nowrap ml-4">2026 – Present</span>
             </div>
           </div>
 
-          {/* Education Column */}
-          <div>
-            <h3 className="font-[family-name:var(--font-syne)] text-sm font-bold tracking-widest uppercase text-pink mb-6">
-              Education
-            </h3>
-            <div className="relative">
-              <div className="absolute left-2 top-0 bottom-0 w-px bg-pink/20" />
-              <div className="flex flex-col gap-4">
-                {education.map((item) => (
-                  <div key={item.title} className="relative pl-8">
-                    <div className="absolute left-0 top-3 w-4 h-4 rounded-full border-2 border-pink bg-background" />
-                    <div className="p-4 rounded-lg border border-border bg-card/50 hover:border-pink/30 transition-colors duration-200">
-                      <div className="flex items-start justify-between gap-4 mb-1">
-                        <h4 className="font-[family-name:var(--font-syne)] text-sm font-bold text-foreground">
-                          {item.title}
-                        </h4>
-                        <span className="text-xs text-muted-foreground whitespace-nowrap">{item.period}</span>
-                      </div>
-                      <p className="text-xs text-pink mb-2">{item.company}</p>
-                      <p className="text-xs text-muted-foreground">{item.note}</p>
-                    </div>
-                  </div>
+          {/* Instructional Designer */}
+          <div className="md:col-span-2 p-6 rounded-2xl border border-cyan/20 bg-card/50 hover:border-cyan/40 transition-colors duration-200 flex flex-col justify-between min-h-[200px]">
+            <div>
+              <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-foreground mb-1">
+                Instructional Designer
+              </h3>
+              <p className="text-cyan text-sm">The Allicock Group</p>
+            </div>
+            <span className="text-xs text-muted-foreground mt-4">2026 – Present</span>
+          </div>
+
+          {/* BS Math CS */}
+          <div className="md:col-span-3 p-6 rounded-2xl border border-pink/20 bg-card/50 hover:border-pink/40 transition-colors duration-200 flex flex-col justify-between">
+            <div>
+              <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-foreground mb-1">
+                BS Mathematics & Computer Science
+              </h3>
+              <p className="text-pink text-sm mb-3">Bulacan State University</p>
+              <div className="flex flex-wrap gap-2">
+                {["Class Mayor", "Dean's Lister", "DOST Scholar", "Civil Service Passer"].map((tag) => (
+                  <span key={tag} className="text-xs px-2 py-1 rounded-full bg-pink/10 text-pink border border-pink/20">
+                    {tag}
+                  </span>
                 ))}
               </div>
             </div>
+            <span className="text-xs text-muted-foreground mt-4">2022 – 2026</span>
           </div>
+
+          {/* Freelance Full Stack */}
+          <div className="md:col-span-2 p-6 rounded-2xl border border-cyan/20 bg-card/50 hover:border-cyan/40 transition-colors duration-200 flex flex-col justify-between">
+            <div>
+              <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-foreground mb-1">
+                Freelance Full Stack Web Developer
+              </h3>
+              <p className="text-cyan text-sm">Self-employed</p>
+            </div>
+            <span className="text-xs text-muted-foreground mt-4">2025 – Present</span>
+          </div>
+
+          {/* Thesis Nomination */}
+          <div className="md:col-span-1 p-6 rounded-2xl border border-yellow/30 bg-yellow/5 hover:border-yellow/60 transition-colors duration-200 flex flex-col justify-between">
+            <span className="text-yellow text-lg">★</span>
+            <div>
+              <p className="text-xs font-semibold text-yellow uppercase tracking-widest mb-1">Thesis Nomination</p>
+              <p className="text-xs text-muted-foreground">Best Programmed Thesis 2026 · Dottica.art</p>
+            </div>
+          </div>
+
+          {/* Logistics Committee Head */}
+          <div className="md:col-span-2 p-6 rounded-2xl border border-cyan/20 bg-card/50 hover:border-cyan/40 transition-colors duration-200 flex flex-col justify-between">
+            <div>
+              <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-foreground mb-1">
+                Logistics Committee Head
+              </h3>
+              <p className="text-cyan text-sm">Mathematics Society, BulSU</p>
+            </div>
+            <span className="text-xs text-muted-foreground mt-4">2024 – 2025</span>
+          </div>
+
+          {/* Secretary / President */}
+          <div className="md:col-span-2 p-6 rounded-2xl border border-cyan/20 bg-card/50 hover:border-cyan/40 transition-colors duration-200 flex flex-col justify-between">
+            <div>
+              <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-foreground mb-1">
+                Secretary / President
+              </h3>
+              <p className="text-cyan text-sm">BulSU CSBand</p>
+            </div>
+            <span className="text-xs text-muted-foreground mt-4">2024 – 2025</span>
+          </div>
+          
+          {/* Freelance Video Editor */}
+          <div className="md:col-span-2 p-6 rounded-2xl border border-cyan/20 bg-card/50 hover:border-cyan/40 transition-colors duration-200 flex flex-col justify-between">
+            <div>
+              <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-foreground mb-1">
+                Freelance Video Editor
+              </h3>
+              <p className="text-cyan text-sm">Self-employed</p>
+            </div>
+            <span className="text-xs text-muted-foreground mt-4">2024 – 2025</span>
+          </div>
+
+          {/* Multimedia Committee */}
+          <div className="md:col-span-2 p-6 rounded-2xl border border-cyan/20 bg-card/50 hover:border-cyan/40 transition-colors duration-200 flex flex-col justify-between">
+            <div>
+              <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-foreground mb-1">
+                Multimedia Committee Head Apprentice
+              </h3>
+              <p className="text-cyan text-sm">Mathematics Society, BulSU</p>
+            </div>
+            <span className="text-xs text-muted-foreground mt-4">2022 – 2023</span>
+          </div>
+          
+          {/* Lab High School */}
+          <div className="md:col-span-2 p-6 rounded-2xl border border-pink/20 bg-card/50 hover:border-pink/40 transition-colors duration-200 flex flex-col justify-between">
+            <div>
+              <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-foreground mb-1">
+                Laboratory High School
+              </h3>
+              <p className="text-pink text-sm mb-1">Bulacan State University</p>
+              <p className="text-xs text-muted-foreground">With Honours</p>
+            </div>
+            <span className="text-xs text-muted-foreground mt-4">2016 – 2022</span>
+          </div>
+
+          <PixelFaceCard />
+
         </div>
       </div>
     </section>

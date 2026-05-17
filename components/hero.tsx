@@ -3,7 +3,19 @@
 import Link from "next/link"
 import { useReveal } from "@/hooks/useReveal"
 
-const techStack = ["Frontend", "Backend", "UI/UX", "Instructional Design", "E-Learning"]
+// Updated to prioritize hard dev skills while retaining LX as a unique value proposition
+const techStack = [
+  "React", 
+  "JavaScript", 
+  "Python",
+  "C#",
+  "Docker",
+  "MySQL",
+  "REST APIs",
+  "Git/GitHub",
+  "UI/UX Design",
+  "LX Architecture"
+]
 
 export function Hero() {
   const { ref, revealed } = useReveal()
@@ -20,10 +32,12 @@ export function Hero() {
         ref={ref}
         className={`reveal ${revealed ? "revealed" : ""} relative z-10 mx-auto max-w-4xl px-6 py-24 text-center`}
       >
-        {/* Availability Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan/30 bg-cyan/5 mb-8">
-          <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-          <span className="text-sm text-cyan font-medium">Available for work</span>
+        {/* Availability & Credential Badges */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan/30 bg-cyan/5">
+            <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
+            <span className="text-sm text-cyan font-medium">Available for work</span>
+          </div>
         </div>
 
         {/* Name */}
@@ -31,14 +45,14 @@ export function Hero() {
           Joseph Santos
         </h1>
 
-        {/* Subtitle */}
+        {/* Subtitle - Shifted focus to Dev, ID reframed as LX */}
         <p className="font-[family-name:var(--font-syne)] text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-6">
-          Web Developer <span className="text-pink">&</span> Instructional Designer
+          Full-Stack Web Developer <span className="text-pink">&</span> LX Specialist
         </p>
 
-        {/* Tagline */}
+        {/* Tagline - Merging the Math/CS background with user-centric development */}
         <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
-          I build web experiences and learning platforms that are fast, functional, and worth remembering.
+          Building high-performance web applications with a foundation in Mathematics and Computer Science. I engineer complex logic into intuitive user experiences.
         </p>
 
         {/* Tech Stack Pills */}

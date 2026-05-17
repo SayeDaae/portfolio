@@ -1,11 +1,17 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { usePathname } from "next/navigation"
 
 export function StarField() {
+  const pathname = usePathname()
+  const isLab = pathname?.startsWith("/lab")
+
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
+    if (isLab) return
+
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext("2d")
@@ -25,9 +31,6 @@ export function StarField() {
       o: Math.random() * 0.8 + 0.2,
     }))
 
-    // slight delay to ensure DOM is ready
-
-    // slight delay to ensure DOM is ready
     const timeout = setTimeout(() => {
       setSize()
     }, 100)
@@ -108,13 +111,15 @@ export function StarField() {
       clearTimeout(timeout)
       window.removeEventListener("resize", handleResize)
     }
-  }, [])
+  }, [isLab])
+
+  if (isLab) return null
 
   return (
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 9999, border: "0px solid red", width: "100%", height: "100%" }}
+      style={{ zIndex: 9999, width: "100%", height: "100%" }}
     />
   )
 }
